@@ -2,20 +2,20 @@
 <div class="container">
   <div class="row justify-content-center mt-5">
     <div class="col-6">
-      <h2><%= patient.title %></h2>
-      <img class="img-fluid" src="<%= patient.image%>" />
+      <h2><%= patients.title %></h2>
+      <img class="img-fluid" src="<%= patients.image%>" />
       <div class="row justify-content-between">
         <form
           class="col-1"
-          action="/patient/likepatient/<%= patient.id %>?_method=PUT"
+          action="/patients/likepatient/<%= patients.id %>?_method=PUT"
           method="post"
         >
           <button class="btn btn-primary fa fa-heart" type="submit"></button>
         </form>
         <h3 class="col-3">Likes: <%= patient.likes %></h3>
-        <%if(patient.user == user.id){ %>
+        <%if(patients.user == user.id){ %>
         <form
-          action="/post/deletepatient/<%= patient.id %>?_method=DELETE"
+          action="/post/deletepatient/<%= patients.id %>?_method=DELETE"
           method="post"
           class="col-3"
         >
@@ -25,11 +25,11 @@
       </div>
     </div>
     <div class="col-3 mt-5">
-      <p><%= patient.caption %></p>
+      <p><%= patients.caption %></p>
     </div>
     <div class="mt-5">
       <h2>Add a Comment</h2>
-      <form action="/Comment/createComment/<%=patient._id%>" method="post">
+      <form action="/Comment/createComment/<%=patients._id%>" method="post">
         <div class="mb-3">
             <label for="comment" class="form-label">Comment</label>
             <input type="text" class="form-control" id="comment" name="comment">
