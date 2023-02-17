@@ -21,7 +21,7 @@ module.exports = {
   getPatients: async (req, res) => {
     try {
       const patients = await Patients.findById(req.params.id);
-      const comments = await Comment.find({Patients: req.params.id}).sort({
+      const comments = await Comment.find({patients: req.params.id}).sort({
         createdAt: "desc"}).lean()
       res.render("patient.ejs", { patients: patients, user: req.user, comments: comments });
     } catch (err) {
@@ -56,7 +56,7 @@ module.exports = {
         }
       );
       console.log("Likes +1");
-      res.redirect(`/Patients/${req.params.id}`);
+      res.redirect(`/patients/${req.params.id}`);
     } catch (err) {
       console.log(err);
     }
@@ -66,7 +66,7 @@ module.exports = {
       // Find Patients by id
       let patients = await Patients.findById({ _id: req.params.id });
       // Delete image from cloudinary
-      await cloudinary.uploader.destroy(Patients.cloudinaryId);
+      await cloudinary.uploader.destroy(patients.cloudinaryId);
       // Delete Patients from db
       await Patients.remove({ _id: req.params.id });
       console.log("Deleted Patient");
