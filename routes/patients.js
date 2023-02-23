@@ -13,4 +13,4 @@ router.put("/likePatients/:id", patientsController.likePatients);
 
 router.delete("/deletePatients/:id", patientsController.deletePatients);
 
-module.exports = router; 
+module.exports = router;  
