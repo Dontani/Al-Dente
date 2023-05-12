@@ -20,7 +20,7 @@ require("dotenv").config({ path: "./config/.env" });
 require("./config/passport")(passport);
 
 //Connect To Database
-connectDB();
+// connectDB();
 
 //Using EJS for views
 app.set("view engine", "ejs");
