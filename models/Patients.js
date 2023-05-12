@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const PatientSchema = new mongoose.Schema({
-  title: {
+  name: {
     type: String,
     required: true,
   },
@@ -13,7 +13,7 @@ const PatientSchema = new mongoose.Schema({
     type: String,
     require: true,
   },
-  caption: {
+  notes: {
     type: String,
     required: true,
   },

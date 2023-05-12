@@ -2,7 +2,7 @@
 <div class="container">
   <div class="row justify-content-center mt-5">
     <div class="col-6">
-      <h2><%= patients.title %></h2>
+      <h2><%= patients.name %></h2>
       <img class="img-fluid" src="<%= patients.image%>" />
       <div class="row justify-content-between">
         <form
@@ -25,7 +25,7 @@
       </div>
     </div>
     <div class="col-3 mt-5">
-      <p><%= patients.caption %></p>
+     <span>Provider's Notes: </span> <p><%= patients.notes %></p>
     </div>
     <div class="mt-5">
       <h2>Add a Comment</h2>
@@ -47,7 +47,7 @@
           </ul>
     <div class="col-6 mt-5">
       <a class="btn btn-primary" href="/profile">Return to Profile</a>
-      <a class="btn btn-primary" href="/feed">Return to Feed</a>
+      <a class="btn btn-primary" href="/feed">Return to Your Schedule</a>
     </div>
   </div>
 </div>

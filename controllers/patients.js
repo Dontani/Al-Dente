@@ -34,10 +34,10 @@ module.exports = {
       const result = await cloudinary.uploader.upload(req.file.path);
 
       await Patients.create({
-        title: req.body.title,
+        name: req.body.name,
         image: result.secure_url,
         cloudinaryId: result.public_id,
-        caption: req.body.caption,
+        notes: req.body.notes,
         likes: 0,
         user: req.user.id,
       });

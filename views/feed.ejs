@@ -1,15 +1,29 @@
 <%- include('partials/header') -%>
-  <div class="container">
-    <div class="row justify-content-center mt-5">
-      <ul class="row list-unstyled">
-        <% for(var i=0; i<patients.length; i++) {%>
-          <li class="col-6 justify-content-between mt-5">
-            <a href="/patients/<%= patients[i]._id%>">
-              <img class="img-fluid" src="<%= patients[i].image%>">
-            </a>
-          </li>
-        <% } %>
-        </ul>
-    </div>
-  </div>  
+<div class="row mt-5">
+  <div class="col-12 text-center" >
+    <strong>Your Schedule For <%= new Date().toLocaleDateString() %></strong>
+  </div>
+</div>
+
+<div class="container text-center">
+  <ul class="list-unstyled">
+    <% for(var i=0; i<patients.length; i++) {%>
+      <li class="mt-5">
+        <a href="/patients/<%= patients[i]._id%>">
+          <img class="img-fluid fixed-size-image" src="<%= patients[i].image%>">
+        </a>
+      </li>
+    <% } %>
+  </ul>
+</div>
+
 <%- include('partials/footer') -%>
+
+<style>
+  .fixed-size-image {
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+  }
+  
+</style>
