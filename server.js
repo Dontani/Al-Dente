@@ -62,7 +62,7 @@ app.use("/comment", commentRoutes);
 
 //Server Running
 connectDB().then(() => {
-  app.listen(PORT, () => {
+  app.listen(process.env.PORT, () => {
       console.log("listening for requests");
   })
 });
