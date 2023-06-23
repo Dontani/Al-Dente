@@ -8,12 +8,9 @@ This is a patient portal software built on the MERN (MongoDB, Express, React, No
 
 - Secure login for providers
 - Dashboard displaying upcoming appointments and patient information
-- Search for patients by name or ID
+- Search for patients by name 
 - View patient details, including medical history, treatment plans, and notes
 - Add new patients and schedule appointments
-- Send messages to patients and receive replies
-- Manage patient accounts, including updating personal information and resetting passwords
-- Integration with Google Maps for directions to the clinic
 
 
 To install the software, follow these steps:
